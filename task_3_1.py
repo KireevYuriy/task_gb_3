@@ -15,6 +15,7 @@ translator_dict = {
 
 
 def num_translate(word, translate_dict):
+    """Функция проверки вхождения введенного слова в словарь и возвращения перевода слова"""
     for item in translate_dict.items():
         key, val = item
         if word == key:
