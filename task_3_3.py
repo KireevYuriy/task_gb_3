@@ -1,4 +1,5 @@
-names = ['Игорь','Александр','Инна','Владимир','Анна','Иван','Данила','Роман','Анастасия','Дарья','Иннокентий']
+names = ['Игорь', 'Александр', 'Инна', 'Владимир', 'Анна', 'Иван', 'Данила', 'Роман', 'Анастасия', 'Дарья',
+         'Иннокентий']
 letter_names = {}
 
 
@@ -11,17 +12,12 @@ def thesaurus(letter_key, list_names):
     for check_name in list_names:
         if letter_key == check_name[0]:
             same_name.append(check_name)
-    return (letter_key, same_name)
+    return letter_key, same_name
 
 
 for name in names:
-    key,val = thesaurus(name[0], names)
+    key, val = thesaurus(name[0], names)
     letter_names.setdefault(key, val)
-print(letter_names)
-
-
-
-
-
-
-
+letter_names = dict(sorted(letter_names.items()))
+for key, val in letter_names.items():
+    print('{0}: {1}'.format(key, val))
